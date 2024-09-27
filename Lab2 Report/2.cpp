@@ -40,7 +40,7 @@ bool is_delimiter(char c) {
 }
 
 void solve() {
-    ifstream inputFile("/Volumes/Files/Programming/Compiler/Lab2 Report/file.cpp"); // Change the path according to your file location
+    ifstream inputFile("/Volumes/Files/Programming/Compiler/Lab2 Report/file.cpp");
     if (!inputFile.is_open()) {
         cerr << "Error: Could not open the file!" << endl;
         return;
