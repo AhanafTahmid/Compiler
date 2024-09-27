@@ -1,6 +1,6 @@
 //Enter C Program - This line will be ignored
 /*
-this 
+those multiple line
 will also 
 be ignored
 */

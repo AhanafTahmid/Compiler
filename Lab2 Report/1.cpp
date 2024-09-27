@@ -5,15 +5,15 @@ using namespace std;
 #define endl '\n'
 #define int long long
 
-//This function checks wheather the character is an operator or not
+//This function checks whether the character is an operator or not
 bool is_operator(char c) {
     return (c == '+' || c == '-' || c == '*' || c == '/' || c == '%');
 }
 
 //This function checks for valid expressions
 //There are 4 if else statements. Chronologically if-else workings are below:
-//1. checks wheather two consecutive characters are operator, in that case it is invalid
-//2. checks if the current character is wheather an alphabet or a digit. In that case it is invalid, set last_operator = false;
+//1. checks whether two consecutive characters are operator, in that case it is invalid
+//2. checks if the current character is whether an alphabet or a digit. In that case it is invalid, set last_operator = false;
 //3. check for parentheses ending and closing
 //4. same as step 3
 //step 3 and 4 is basically to check if brackets are ending and closing correctly

@@ -3,7 +3,7 @@ using namespace std;
 #define endl '\n'
 #define int long long
 
-//This function checks wheather a line is comment or not 
+//This function checks whether a line is comment or not 
 //If the first two character is "//" or "/*" then it is a comment otherwise it is not
 bool is_comment(char c, char ch) {
     if(ch=='/' && ch=='/') return true;
