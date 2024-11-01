@@ -1,25 +1,33 @@
+//Id: C223101
+
 #include <bits/stdc++.h>
 using namespace std;
 #define endl '\n'
 #define int long long
 
-//This function checks whether a line is comment or not 
-//If the first two character is "//" or "/*" then it is a comment otherwise it is not
-bool is_comment(char c, char ch) {
-    if(ch=='/' && ch=='/') return true;
-    if(ch=='/' && ch=='*') return true;
-    return false;
+//This function checks valid strings if it follows: a+
+
+// aaabbbbb
+// bbbb
+bool valid(string &s){
+    int n = s.size();
+    int ct = 0;
+    for(int i=0;i<n;i++){
+        //if after 'b' another character comes then it is invalid
+        if(i+1<n && s[i]=='b' && s[i+1]!='b') return false;
+        //if the character is neither a or b then it is false
+        if(s[i]!='a' && s[i]!='b') return false;
+        ct+= s[i]=='b';
+    }
+    //if 0 'b's then it invalid
+    if(ct==0) return false;
+    return true;
 }
 
 void solve(){
-    string s;getline(cin, s);
+    string s;cin>>s;
     cout << "Expression " << ": " << s << endl;
-    bool ok = 0;
-    int n = s.size();
-    for(int i=0;i<n-1;i++){
-        if(is_comment(s[i],s[i+1])) ok = true;
-    }
-    cout << "Is Comment: " << (ok ? "Yes" : "No") << endl;
+    cout << (valid(s)?"The string follows a*b+":"The string does not follow a*b+") << endl;
 }
 
 int32_t main(){

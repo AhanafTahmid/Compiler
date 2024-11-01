@@ -1,29 +1,24 @@
+//Id: C223101
+
 #include <bits/stdc++.h>
 using namespace std;
 #define endl '\n'
 #define int long long
 
-bool is_operator(char c) {
-    string op = "+-*/%=<>!&|^";
-    for (int i = 0; i<op.size(); i++) {
-        if (c == op[i]) {
-            return true;
-        }
-    }
-    return false;
-}
+//This function checks valid strings if it follows: a+
 
-//This function counts the total number of operators
-int total_operators(string s) {
-    int cnt = 0;
-    for(int i=0;i<s.size();i++) if(is_operator(s[i])) cnt++;
-    return cnt;
+bool valid(string &s){
+    int n = s.size();
+    for(int i=0;i<n;i++){
+        if(s[i]!='a') return false;
+    }
+    return true;
 }
 
 void solve(){
     string s;cin>>s;
     cout << "Expression " << ": " << s << endl;
-    cout << "Number of operators: " << total_operators(s) << endl;
+    cout << (valid(s)?"The string follows a+":"The string does not follow a+") << endl;
 }
 
 int32_t main(){
